@@ -1,0 +1,282 @@
+{
+  "mock (rules)": [
+    {
+      "case_id": "t01",
+      "category": "calculation",
+      "repeat": 1,
+      "called": [
+        "calculator",
+        "search_knowledge_base"
+      ],
+      "verdict": "extra_tool",
+      "latency_ms": 0,
+      "prompt_tokens": 97,
+      "completion_tokens": 18,
+      "error": null
+    },
+    {
+      "case_id": "t02",
+      "category": "calculation",
+      "repeat": 1,
+      "called": [
+        "search_knowledge_base"
+      ],
+      "verdict": "wrong_tool",
+      "latency_ms": 0,
+      "prompt_tokens": 115,
+      "completion_tokens": 27,
+      "error": null
+    },
+    {
+      "case_id": "t03",
+      "category": "calculation",
+      "repeat": 1,
+      "called": [
+        "search_knowledge_base"
+      ],
+      "verdict": "wrong_tool",
+      "latency_ms": 0,
+      "prompt_tokens": 110,
+      "completion_tokens": 21,
+      "error": null
+    },
+    {
+      "case_id": "t04",
+      "category": "weather",
+      "repeat": 1,
+      "called": [
+        "search_knowledge_base"
+      ],
+      "verdict": "wrong_tool",
+      "latency_ms": 0,
+      "prompt_tokens": 101,
+      "completion_tokens": 13,
+      "error": null
+    },
+    {
+      "case_id": "t05",
+      "category": "weather",
+      "repeat": 1,
+      "called": [
+        "search_knowledge_base"
+      ],
+      "verdict": "wrong_tool",
+      "latency_ms": 0,
+      "prompt_tokens": 102,
+      "completion_tokens": 15,
+      "error": null
+    },
+    {
+      "case_id": "t06",
+      "category": "web",
+      "repeat": 1,
+      "called": [
+        "search_knowledge_base"
+      ],
+      "verdict": "wrong_tool",
+      "latency_ms": 0,
+      "prompt_tokens": 108,
+      "completion_tokens": 20,
+      "error": null
+    },
+    {
+      "case_id": "t07",
+      "category": "web",
+      "repeat": 1,
+      "called": [
+        "search_knowledge_base"
+      ],
+      "verdict": "wrong_tool",
+      "latency_ms": 0,
+      "prompt_tokens": 101,
+      "completion_tokens": 13,
+      "error": null
+    },
+    {
+      "case_id": "t08",
+      "category": "web",
+      "repeat": 1,
+      "called": [
+        "search_knowledge_base"
+      ],
+      "verdict": "wrong_tool",
+      "latency_ms": 0,
+      "prompt_tokens": 99,
+      "completion_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t09",
+      "category": "documents",
+      "repeat": 1,
+      "called": [
+        "search_knowledge_base"
+      ],
+      "verdict": "correct",
+      "latency_ms": 0,
+      "prompt_tokens": 112,
+      "completion_tokens": 24,
+      "error": null
+    },
+    {
+      "case_id": "t10",
+      "category": "documents",
+      "repeat": 1,
+      "called": [
+        "search_knowledge_base"
+      ],
+      "verdict": "correct",
+      "latency_ms": 0,
+      "prompt_tokens": 102,
+      "completion_tokens": 14,
+      "error": null
+    },
+    {
+      "case_id": "t11",
+      "category": "documents",
+      "repeat": 1,
+      "called": [
+        "search_knowledge_base"
+      ],
+      "verdict": "correct",
+      "latency_ms": 0,
+      "prompt_tokens": 105,
+      "completion_tokens": 17,
+      "error": null
+    },
+    {
+      "case_id": "t12",
+      "category": "direct",
+      "repeat": 1,
+      "called": [
+        "search_knowledge_base"
+      ],
+      "verdict": "over_call",
+      "latency_ms": 0,
+      "prompt_tokens": 99,
+      "completion_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t13",
+      "category": "direct",
+      "repeat": 1,
+      "called": [
+        "search_knowledge_base"
+      ],
+      "verdict": "over_call",
+      "latency_ms": 0,
+      "prompt_tokens": 109,
+      "completion_tokens": 21,
+      "error": null
+    },
+    {
+      "case_id": "t14",
+      "category": "direct",
+      "repeat": 1,
+      "called": [
+        "search_knowledge_base"
+      ],
+      "verdict": "over_call",
+      "latency_ms": 0,
+      "prompt_tokens": 99,
+      "completion_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t15",
+      "category": "direct",
+      "repeat": 1,
+      "called": [
+        "search_knowledge_base"
+      ],
+      "verdict": "over_call",
+      "latency_ms": 0,
+      "prompt_tokens": 101,
+      "completion_tokens": 12,
+      "error": null
+    },
+    {
+      "case_id": "t16",
+      "category": "trap",
+      "repeat": 1,
+      "called": [
+        "weather",
+        "search_knowledge_base"
+      ],
+      "verdict": "over_call",
+      "latency_ms": 0,
+      "prompt_tokens": 107,
+      "completion_tokens": 23,
+      "error": null
+    },
+    {
+      "case_id": "t17",
+      "category": "trap",
+      "repeat": 1,
+      "called": [
+        "search_knowledge_base"
+      ],
+      "verdict": "over_call",
+      "latency_ms": 0,
+      "prompt_tokens": 110,
+      "completion_tokens": 22,
+      "error": null
+    },
+    {
+      "case_id": "t18",
+      "category": "trap",
+      "repeat": 1,
+      "called": [
+        "search_knowledge_base"
+      ],
+      "verdict": "over_call",
+      "latency_ms": 0,
+      "prompt_tokens": 100,
+      "completion_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t19",
+      "category": "multi-tool",
+      "repeat": 1,
+      "called": [
+        "weather",
+        "calculator",
+        "search_knowledge_base"
+      ],
+      "verdict": "extra_tool",
+      "latency_ms": 0,
+      "prompt_tokens": 105,
+      "completion_tokens": 28,
+      "error": null
+    },
+    {
+      "case_id": "t20",
+      "category": "multi-step",
+      "repeat": 1,
+      "called": [
+        "search_knowledge_base"
+      ],
+      "verdict": "correct",
+      "latency_ms": 0,
+      "prompt_tokens": 122,
+      "completion_tokens": 34,
+      "error": null
+    },
+    {
+      "case_id": "t21",
+      "category": "tolerant",
+      "repeat": 1,
+      "called": [
+        "calculator",
+        "search_knowledge_base"
+      ],
+      "verdict": "over_call",
+      "latency_ms": 0,
+      "prompt_tokens": 95,
+      "completion_tokens": 11,
+      "error": null
+    }
+  ]
+}

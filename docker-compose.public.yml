@@ -1,0 +1,45 @@
+# Public demo on the Jetson, behind a Cloudflare Tunnel + Cloudflare Access login.
+#
+#   docker compose -f docker-compose.yml -f docker-compose.public.yml up -d --build
+#
+# What changes compared with the local setup:
+# - NO port is published to the network: only the cloudflared container, which dials
+#   OUT to Cloudflare, can reach the app. Nobody can bypass the login page.
+# - The browser talks to one origin: /api is forwarded by the frontend's nginx.
+# - Containers restart on their own (power cut, reboot) while you're away.
+# See DEPLOY_PUBLIC.md for the full procedure. Needs Docker Compose >= 2.24 (!reset).
+
+services:
+  db:
+    ports: !reset []
+    restart: unless-stopped
+
+  backend:
+    ports: !reset []
+    restart: unless-stopped
+    # --root-path: the app is served under /api, so /docs finds /api/openapi.json
+    command: >
+      sh -c "alembic upgrade head &&
+      exec uvicorn app.main:app --host 0.0.0.0 --port 8000 --root-path /api"
+    # Reach Ollama running on the Jetson itself (outside Docker):
+    # LLM_BASE_URL=http://host.docker.internal:11434/v1 in .env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  frontend:
+    build:
+      args:
+        VITE_API_URL: /api
+    # Local check from the Jetson only (curl http://127.0.0.1:5173), never the network
+    ports: !reset
+      - "127.0.0.1:5173:80"
+    restart: unless-stopped
+
+  cloudflared:
+    image: cloudflare/cloudflared:2026.10.1
+    command: tunnel --no-autoupdate run
+    environment:
+      TUNNEL_TOKEN: ${CLOUDFLARE_TUNNEL_TOKEN:?CLOUDFLARE_TUNNEL_TOKEN must be set (see DEPLOY_PUBLIC.md)}
+    depends_on:
+      - frontend
+    restart: unless-stopped

@@ -1,0 +1,23 @@
+[
+  {"id": "t01", "category": "calculation", "question": "What is 17.5% of 48,200?", "expected": ["calculator"]},
+  {"id": "t02", "category": "calculation", "question": "If I invest 10,000 euros at 4% a year for 3 years with annual compounding, how much will I have?", "expected": ["calculator"]},
+  {"id": "t03", "category": "calculation", "question": "By how many percent did a share go up if it moved from 980 to 1,250 euros?", "expected": ["calculator"]},
+  {"id": "t04", "category": "weather", "question": "Do I need an umbrella in Lyon tomorrow?", "expected": ["weather"], "note": "weather not named"},
+  {"id": "t05", "category": "weather", "question": "Quel temps fait-il à Bordeaux en ce moment ?", "expected": ["weather"], "note": "French"},
+  {"id": "t06", "category": "web", "question": "What did the European Central Bank decide at its most recent meeting?", "expected": ["web_search"], "note": "recent event: the model can't know"},
+  {"id": "t07", "category": "web", "question": "What is the EUR/USD exchange rate today?", "expected": ["web_search"]},
+  {"id": "t08", "category": "web", "question": "Who is the current CEO of Airbus?", "expected": ["web_search"], "note": "changes over time"},
+  {"id": "t09", "category": "documents", "question": "What is the maximum exposure to emerging markets of the Aurora European Equity Fund?", "expected": ["search_knowledge_base"]},
+  {"id": "t10", "category": "documents", "question": "What are the entry costs of our equity fund?", "expected": ["search_knowledge_base"], "note": "'our' points to internal documents"},
+  {"id": "t11", "category": "documents", "question": "Quelle est la politique d'exclusion ESG du fonds Aurora ?", "expected": ["search_knowledge_base"], "note": "French"},
+  {"id": "t12", "category": "direct", "question": "What is a bond, in one sentence?", "expected": []},
+  {"id": "t13", "category": "direct", "question": "Explain the difference between an ETF and a mutual fund in two sentences.", "expected": []},
+  {"id": "t14", "category": "direct", "question": "Hello! What can you do for me?", "expected": []},
+  {"id": "t15", "category": "direct", "question": "Translate 'risk appetite' into French.", "expected": []},
+  {"id": "t16", "category": "trap", "question": "What does the word 'weather' mean, and where does it come from?", "expected": [], "note": "keyword trap: about the word, not the forecast"},
+  {"id": "t17", "category": "trap", "question": "How do you calculate compound interest? Just explain the formula, no numbers.", "expected": [], "note": "keyword trap: explanation, not a calculation"},
+  {"id": "t18", "category": "trap", "question": "Who wrote 'The Wealth of Nations'?", "expected": [], "note": "stable fact: no web search needed"},
+  {"id": "t19", "category": "multi-tool", "question": "What's the weather in Paris, and what is 15% of 2,340?", "expected": ["weather", "calculator"], "note": "two independent tools: both in the first turn"},
+  {"id": "t20", "category": "multi-step", "question": "According to our documents, what are the ongoing charges of the equity fund, and how much is that per year on 50,000 euros?", "expected": ["search_knowledge_base"], "allowed": ["calculator"], "note": "the calculation needs the document first: searching first is right"},
+  {"id": "t21", "category": "tolerant", "question": "What is 2 + 2?", "expected": [], "allowed": ["calculator"], "note": "either is fine: trivial, but the tool says 'any calculation'"}
+]
